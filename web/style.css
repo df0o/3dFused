@@ -1,0 +1,733 @@
+* { /* used to clear all default margin and padding and set font for whole page */
+  margin: 0; 
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  }
+
+.main-header { /* header position stick to top */
+	display: block;
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  padding: 10px 0px 10px 0px;
+  background: white;
+  box-shadow: 0px 2px 10px #bdbdbd;
+  z-index: 100;
+}
+
+.site-logo { /* move logo to left of header */
+	float: left;
+  padding: 7px 15px 0px 20px;
+}
+
+.nav { 
+	padding: 27px 0px 0px 200px;
+}
+
+.nav ul li {
+  list-style: none;
+}
+
+#main-content {
+  height: 700px;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) { /* break point for mobile */
+  #main-content {
+    height: 1400px;
+  }
+}
+
+#menu-icon { /* hide menu icon in regular screen size */
+	width: 40px;
+	height: 40px;
+	background: #dadada url(menu-icon.png) center;
+}
+
+a:hover#menu-icon {
+	border-radius: 4px 4px 0 0;
+}
+
+#about-page {
+  float: left;
+  font-weight: 400;
+  
+}
+
+#login-nav {
+  float: right;
+  padding: 5px 10px 5px 25px;
+  font-weight: 400;
+}
+
+#signup-nav { /* bold sign up link */
+  float: right;
+  padding: 5px 35px 5px 25px;
+  color: red;
+  font-weight: 700;
+}
+
+#start-print-nav { /* draw box around link for effect */
+  float: right;
+  padding: 5px 25px 5px 25px;
+  margin: 0px 10px 0px 0px;
+  border: 1px solid #868686;
+  border-radius: 5px;
+  font-weight: 400;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) { /* break point for mobile */
+  .main-header { /* make header bigger */
+    height: 150px;
+  }
+  
+  .site-logo { /* move logo to left of header */
+    height: 130px;
+  }
+  
+  #menu-icon { /* show menu icon */
+		display:inline-block;
+    float: right;
+    margin: 10px 20px 0px 0px;
+    padding: 50px 50px 0px 0px;
+	}
+  
+  .nav ul, .nav:active ul { /* positioning nav list */
+		display: none;
+		position: absolute;
+		padding: 20px;
+		background: #fff;
+		border: 5px solid #444;
+		right: 20px;
+		top: 60px;
+		width: 50%;
+		border-radius: 4px 0 4px 4px;
+	}
+
+	.nav li { 
+		text-align: center;
+		width: 100%;
+		padding: 10px 0;
+		margin: 0;
+	}
+
+	.nav:hover ul {
+		display: block;
+	}
+
+  #about-page { /* change font size of menu */
+    float: none;
+    font-size: 250%;
+  }
+
+  #login-nav {
+    float: none;
+    padding: 0;
+    font-size: 250%;
+  }
+
+  #signup-nav { /* remove special colour of text */
+    float: none;
+    padding: 0;
+    color: #5f5f5f;
+    font-size: 250%;
+  }
+
+  #start-print-nav { /* remove any borders */
+    float: none;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-size: 250%;
+  }
+}
+
+#start-print-nav:hover { /* change colour of text and extra border when hover over. whithout this, only the text will change colour*/
+  border-color: red;
+}
+
+#main-content { /* padding for main page to shift background video below header */
+  padding: 80px 0px 600px 0px;
+}
+
+#videobg-div { /* set max width to 100% and hide extra height. also set video to very back */
+  width: 100%;
+  max-height: 600px;
+  overflow: hidden;
+  z-index: -100;
+}
+
+#video-bg { /* position video in div */
+  position: relative;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  background-size: cover;
+  z-index: -100;
+}
+
+#overlay-text { /* position of text on top of bg video */
+  position: absolute;
+  top: 35%;
+  left: 30%;
+  margin-right: -30%;
+  padding: 50px 50px 50px 50px;
+  transform: translate(-30%, -30%);
+  color: white;
+}
+
+#title-text {
+  font-size: 350%;
+  font-weight: 700;
+}
+
+#description-text {
+  font-size: x-large;
+  font-weight: 300;
+  margin: 25px 0px 0px 0px;
+}
+
+#startnow-button { /* make button pretty */
+  background-color: #cc2d2d;
+  color: white;
+  padding: 20px 30px 20px 30px;
+  margin: 100px 0px 0px 0px;
+  border: 1px solid #cc2d2d;
+  border-radius: 5px;
+  font-size: x-large;
+}
+
+#startnow-button:hover { /* change colour when hover */
+  background-color: #da3e3e;
+  color: white;
+}
+
+#howitworks-text { 
+  font-weight: 300;
+  margin: 0px 0px 0px 30px;
+  color: #e6e6e6;
+  text-decoration: underline;
+}
+
+#howitworks-text:hover{ /* remove underline when hover */
+  text-decoration: none;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  #main-content { /* resize padding */
+    padding: 150px 0px 600px 0px;
+  }
+  
+  #overlay-text { /* resize overlay text */
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    margin-right: -30%;
+    padding: 50px 50px 50px 50px;
+    transform: translate(-30%, -30%);
+    color: white;
+  }
+    
+  #title-text { /* change text font size */
+    font-size: 550%;
+    font-weight: 700;
+  }
+
+  #description-text {
+    font-size: 200%;
+    font-weight: 300;
+    margin: 25px 0px 0px 0px;
+  }
+
+  #startnow-button { /* make button larger */
+    padding: 30px 50px 30px 50px;
+    margin: 50px 0px 0px 0px;
+    font-size: 250%;
+  }
+
+  #howitworks-text { 
+    margin: 0px 0px 0px 30px;
+    font-size: 200%;
+  }
+}
+
+#registerprinter-bar {
+  height: 80px;
+  width: 100%;
+  background-color: #cc2d2d;
+  position: relative;
+}
+
+#joinnetwork-text { /* add border around text */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: x-large;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px 20px 10px 20px;
+  font-weight: 300;
+}
+
+#joinnetwork-text:hover { /* change bg colour when hover */
+  background-color: #da3e3e;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  #registerprinter-bar { /* make bar bigger */
+    height: 150px;
+    width: 100%;
+  }
+  
+  #joinnetwork-text { /* make text bigger */
+    font-size: 250%;
+    padding: 10px 20px 10px 20px;
+  }
+}
+
+#mainpage-article { 
+  width: 60%;
+  position: absolute;
+  left: 20%;
+  top: 830px;
+  text-align: center
+}
+
+#designintro-title { 
+  font-size: 150%;
+}
+
+#form-text {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+#designintro-text { 
+  margin: 20px 0px 60px 0px;
+  font-weight: 300;
+}
+
+#hiw-title { 
+  font-size: 250%;
+  margin-bottom: 15px;
+}
+
+.howitworks-subtitle {
+  display: inline;
+  margin: 25px 30px 30px 30px;
+  font-weight: 500;
+}
+
+.howitworks-exp {
+  text-align: center;
+  margin: 15px 0px 10px 0px;
+}
+
+#hiw-tableTitle th { /* display 3 how tos */
+  font-size: 125%;
+  font-weight: 400;
+}
+
+.search-icon { 
+  height: 100px;
+  padding: 10px 10px 10px 10px;
+}
+
+#hiw-TableDesp th {
+  font-weight: 300;
+  padding: 10px 10px 100px 10px;
+}
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  #mainpage-article { /* change position to make max width bogger and font size */
+    width: 80%;
+    left: 10%;
+    top: 1000px;
+  }
+  
+  #designintro-title { /* change font size */
+    font-size: 250%;
+  }
+
+  #designintro-text { 
+    margin: 20px 0px 60px 0px;
+    font-size: 250%;
+  }
+  
+  #hiw-title { 
+    font-size: 350%;
+    margin-bottom: 15px;
+  }
+  
+  .howitworks-subtitle {
+    margin: 25px 30px 30px 30px;
+    font-weight: 500;
+    font-size: 250%;
+  }
+
+  .howitworks-exp {
+    margin: 15px 0px 10px 0px;
+  }
+
+  #hiw-tableTitle th {
+    font-size: 250%;
+    font-weight: 400;
+  }
+
+  #hiw-TableDesp th {
+    font-weight: 300;
+    padding: 10px 10px 150px 10px;
+    font-size: 230%;
+  } 
+}
+
+.main-footer { /* footer size and colour */
+	display: block;
+  height: 35px;
+  width: 100%;
+  padding: 10px 0px 10px 0px;
+  background: #2b2e39;
+}
+
+footer#stick-footer { /* some pages footer anchers to bottom */
+  position: fixed;
+  bottom: 0;
+}
+
+.site_map {
+  padding: 0px 0px 0px 30px;
+  color: #d3d3d3;
+}
+
+.mapLinks {
+  padding: 0px 0px 0px 40px;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .main-footer { /* make footer size bigger so its easier to see */
+    height: 100px;
+  }
+  
+  .site_map {
+    font-size: 250%;
+  }
+
+  .mapLinks {
+    font-size: 250%;
+  } 
+}
+
+body#access-page { /* change bg colour of registration page */
+  background-color: #3e6177;
+}
+
+#access-wrapper { /* a js modal styled box */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  padding: 50px 50px 50px 50px;
+  border: 1px solid white;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+}
+
+#acc-signupText {
+  font-size: 125%;
+  padding-left:5px;
+  margin-bottom: 10px;
+}
+
+.form-input { /* make form input boxes pretty */
+  margin: 5px 5px 5px 5px;
+  border-radius: 5px;
+  padding: 2px 2px 2px 2px;
+  width: 300px;
+}
+
+.input-form input:focus:invalid, .form-input textarea:focus:invalid { /* when a field is considered invalid by the browser */
+    box-shadow: 0 0 5px #d45252;
+    border-color: #b03535
+}
+
+#acc-name { /* fit first and last name boxes on one line */
+  width: 138px;
+}
+
+#acc-lastname {
+  width: 138px;
+}
+
+#acc-termsCheck { /* change checkbox size */
+  width: 20px;
+}
+
+#acc-submit { /* make submit button pretty */
+  font-size: 125%;
+  background-color: #cc2d2d;
+  color: white;
+  padding: 15px 30px 15px 30px;
+  border: 1px solid #cc2d2d;
+  border-radius: 5px;
+}
+
+#acc-submit:hover {
+  background-color: #da3e3e;
+  color: white;
+}
+
+#close-button { /* put close button at corner of modal to go back to home page */
+  height: 27px;
+  float: right;
+  transform: translate(160%, -160%);
+}
+
+#errorMsg {
+  font-size: 80%;
+  color: red;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  #access-wrapper { /* edit padding to fit device size */
+    top: 35%;
+    padding: 100px 100px 100px 100px;
+    margin: 100px 0px 100px 0px;
+  }
+
+  #acc-signupText {
+    font-size: 350%;
+    width: 600px;
+  }
+
+  .form-input { /* make form input bigger */
+    width:600px;
+    font-size: 250%;
+  }
+
+  #acc-name { /* fit first and last name boxes on one line */
+    width: 600px;
+  }
+
+  #acc-lastname {
+    width: 600px;
+  }
+
+  #acc-termsCheck { /* change checkbox size */
+    width: 25px;
+    height: 25px;
+    font-size: 110%;
+  }
+  
+  #acc-submit { /* make submit button bigger */
+    font-size: 350%;
+    padding: 15px 30px 15px 30px;
+  }
+
+  #close-button { /* move close button */
+    height: 80px;
+    float: right;
+    transform: translate(120%, -120%);
+  }
+}
+
+#subpage-article { /* center submission page content */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  padding: 50px 50px 50px 50px;
+  border: 1px solid white;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+}
+
+#sub-submit { /* make submit button pretty */
+  font-size: 125%;
+  background-color: #cc2d2d;
+  color: white;
+  padding: 15px 30px 15px 30px;
+  border: 1px solid #cc2d2d;
+  border-radius: 5px;
+  width: 200px;
+}
+
+#sub-submit:hover {
+  background-color: #da3e3e;
+  color: white;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  #subpage-article { /* move page to fit */
+    top: 50%;
+    padding: 20px 20px 20px 20px;
+  }
+  
+  #sub-header {
+    font-size: 350%;
+  }
+
+  #sub-submit { /* make submit button bigger */
+    font-size: 350%;
+    padding: 25px 30px 25px 30px;
+    width: 500px;
+  }
+}
+
+#search-article {
+  padding: 200px 0px 100px 0px;
+  margin-left: 30%;
+}
+
+input[type="checkbox"]{
+  width: 20px;
+}
+
+
+#search-location { /* make search box bigger */
+  font-size: 150%;
+  width: 50%;
+}
+
+#search-submit {
+  font-size: 125%;
+  background-color: #cc2d2d;
+  color: white;
+  padding: 15px 30px 15px 30px;
+  margin-top: 20px;
+  border: 1px solid #cc2d2d;
+  border-radius: 5px;
+  width: 200px;
+}
+
+#search-submit:hover {
+  background-color: #da3e3e;
+  color: white;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  #search-article { /* make margin smaller to fit more to device */
+    margin-left: 10%;
+  }
+
+  input[type="checkbox"]{ /* make checkbox bigger */
+    width: 35px;
+    height: 35px;
+  }
+  
+  #search-title {
+    font-size: 300%;
+  }
+
+  #search-location { /* make search box bigger */
+    font-size: 350%;
+    width: 80%;
+  }
+
+  #selectMaterial {
+    font-size: 350%;
+  }
+  
+  input[type=checkbox] + label { /* change checkbox label size */
+    font-size: 250%;
+  }
+  
+  #search-submit { /* make submit button bigger */
+    font-size: 350%;
+    padding: 25px 30px 25px 30px;
+    width: 500px;
+  }
+  
+  #tempLink {
+    font-size: 250%;
+  }
+}
+
+#result-article {
+  padding: 100px 0px 0px 0px;
+  position: absolute;
+  width: 50%;
+  left: 25%;
+}
+
+#map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+}
+
+#ind-map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+}
+
+.result-table { /* add border to table */
+  margin: 30px 0px 40px 0px;
+  width: 100%;
+  border: 1px solid #adadad;
+  border-radius: 5px;
+}
+
+.result-table th, td {
+  padding: 20px 10px 20px 10px;
+  border: 1px solid #adadad;
+}
+
+.raiting-stars { /* resize star picture */
+  width: 50px;
+}
+
+.printerPicture { /* resize picture of printer */
+  width: 100%;
+}
+
+.sample-description-text {
+  font-weight: 300;
+}
+
+#bottom-table {
+  margin-bottom: 100px;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  #result-article { /* make margin smaller to fit more on smaller screen */
+    padding: 220px 0px 0px 0px;
+    width: 80%;
+    left: 10%;
+  }
+  
+  #itemTitle{
+    font-size: 250%;
+  }
+  
+  .result-table th, td {
+    font-size: 250%;
+  }
+  
+  #bottom-table {
+    margin-bottom: 200px;
+  }
+}
+
+
+a:link, a:visited { /* change all link colours */
+  color: #5f5f5f;
+  text-decoration: none;
+  background: none;
+}
+
+a:hover, a:active {
+  color: red;
+  text-decoration: none;
+  background: none;
+}

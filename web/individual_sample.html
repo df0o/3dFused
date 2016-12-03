@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="4ww3 project blah blah" />
+    <meta name="keywords" content="will,fill,later" />
+    <meta name="author" content="Susie Yu" />
+    <meta name="robots" content="index,follow" />
+    <link rel="icon" href="icon.ico" />
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js" ></script>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet"> <!-- google sans-serif font "Ubuntu" -->
+    <title>3DFused - Turning Designs Into Objects</title>
+  </head>
+  
+  <body>
+    <div class="result-wrapper"> <!-- wrapper for body -->
+      <header class="main-header"> 
+        <div>
+          <a class="main-logo" href="./index.html"> <!-- clicking on logo links back to main page -->
+            <img class="site-logo" alt="3dFused logo" src="main_logo.png">
+          </a>
+        </div>
+        <div class="nav"> <!--navagation in top bar -->
+        <a href="#" id="menu-icon"></a>
+          <ul>
+            <li><a id="about-page" href="./about.html">ABOUT</a></li> <!-- this page doesnt link to anything right now -->
+            <li><a id="signup-nav" href="./registration.html">Sign up</a></li>
+            <li><a id="login-nav" href="./registration.html">Log in</a></li>
+            <li><a id="start-print-nav" href="./search.html">3D Print</a></li>
+          </ul>
+        </div>
+      </header>
+      
+      <article id="result-article"> <!-- hard coded search results -->
+        <section id="resultsmain">
+        
+          <div id="map"></div>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIEqNwyeMt5ow6iRiI3t9Mk0RXBo-S-FQ&callback=initMap"
+          async defer>
+          </script>
+          
+          <div class="table-view"> <!-- table of object details -->
+          <br><br><h2 id="itemTitle">MakerBot Replicator Desktop 3D Printer</h2>
+            <table class="result-table">
+              <tr>
+                <td rowspan="2"><img class="printerPicture" alt="picture of 3d printer" src="printerSample.png"></td> <!-- image of object that spans 2 rows -->
+                <td>Description: <br> <!-- description of object -->
+                <p class="sample-description-text">The fifth generation replicator features WiFi enabled software connected with Makerbot mobile apps alongside Makerbot desktop apps. The replicator desktop model provides a large build volume and fast print time to accelerate rapid prototyping and model making.<p>
+                </td> 
+              </tr>
+              <tr>
+                <td>Price: <br> <!-- listed price -->
+                <p class="sample-description-text">the price will be based on per amount of filiment used for the print</p>
+                </td> 
+              </tr>
+            </table>
+
+            <table class="result-table" id="bottom-table">
+              <tr>
+                <th colspan="2">Customer Reviews</th> <!-- sample reviews -->
+              </tr>
+              <tr>
+                <td><img class="raiting-stars" alt="picture of star raitings" src="stars.png"></td>
+                <td class="sample-description-text">this is a review. the print was great. printer owner was nice. price was good</td>
+              </tr>
+              <tr>
+                <td><img class="raiting-stars" alt="picture of star raitings" src="stars.png"></td>
+                <td class="sample-description-text">this is another review. woot!</td>
+              </tr>
+            </table>
+          </div>
+        </section>
+      </article>
+      
+      <footer class="main-footer" id="stick-footer"> <!-- this footer anchors to bottom of page -->
+        <p class="site_map">Site Map</p>
+        <a class="mapLinks" id="map-search" href="./search.html">3DPrint</a>
+        <a class="mapLinks" id="submit" href="./submission.html">List Printer</a>
+      </footer>
+    </div>
+  </body>
+</html>

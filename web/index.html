@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="4ww3 project blah blah" />
+    <meta name="keywords" content="will,fill,later" />
+    <meta name="author" content="Susie Yu" />
+    <meta name="robots" content="index,follow" />
+    <link rel="icon" href="icon.ico" /> <!-- icon for site -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet"> <!-- google sans-serif font "Ubuntu" -->
+    <title>3DFused - Turning Designs Into Objects</title>
+  </head>
+
+  <body>
+    <div id="index-wrapper"> <!-- wrapper for body -->
+      <header class="main-header"> 
+        <div>
+          <a class="main-logo" href="./index.html"> <!-- clicking on logo links back to main page -->
+            <img class="site-logo" alt="3dFused logo" src="main_logo.png">
+          </a>
+        </div>
+
+        <div class="nav"> <!--navagation in top bar -->
+        <a href="#" id="menu-icon"></a>
+          <ul>
+            <li><a id="about-page" href="./about.html">ABOUT</a></li> <!-- this page doesnt link to anything right now -->
+            <li><a id="signup-nav" href="./registration.html">Sign up</a></li>
+            <li><a id="login-nav" href="./registration.html">Log in</a></li>
+            <li><a id="start-print-nav" href="./search.html">3D Print</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <div id="main-content">
+        <div id="overlay-text"> <!-- text over video background -->
+          <h1 id="title-text">Turning designs into objects</h1>
+          <p id="description-text">Lorem ipsum dolor sit amet, lorem nunc sed sollicitudin acss.</p>
+          <button id="startnow-button" onClick="location.href='./search.html'">3D Print Now!</button>
+          <a id="howitworks-text" href="#hiw-content">See how it works</a> <!-- jump to how it work at bottom of page -->
+        </div>
+        
+        <div id="videobg-div"> <!-- video background for landing page -->
+          <video loop muted autoplay id="video-bg" poster="bg_still.jpg">
+            <source src="bg.mp4" type="video/mp4">
+          </video>
+        </div>
+        
+        <div id="registerprinter-bar"> <!-- people with printers can contrubite to prints -->
+          <a id="joinnetwork-text" href="./submission.html">Have a printer? Join the network!</a>
+        </div>
+        
+        <article id="mainpage-article">
+          <section id="quickintro-text">
+            <h3 id="designintro-title">Designs into Objects</h3> <!-- a short into to what the site is suppose to do -->
+            <p id="designintro-text">Lorem ipsum dolor sit amet, lorem nunc sed sollicitudin ac, metus arcu. Maecenas lorem pharetra. Eu platea vestibulum, nullam viverra metus donec in, amet vehicula auctor semper, elementum diam, pretium sit velit elit ornare amet.</p>
+          </section>
+          
+          <section id="hiw-content">
+            <h2 id="hiw-title">How it Works</h2>
+            <h2 class="howitworks-subtitle" id="hiw-sub-print">Print your designs</h2>
+            <!-- <h2 class="howitworks-subtitle" id="howitworks-sub-earn">Help print and earn</h2> -->
+            <div class="howitworks-exp" id="hiw-exp-print">
+              <table class="howitworks-table" id="hiw-printTable">
+                <tr id="hiw-tableTitle">
+                  <th>1. Search</th>
+                  <th>2. Upload</th>
+                  <th>3. Print</th>
+                </tr>
+                <tr> <!-- sample pictures for how tos. they're all the same right now. will change once i find better pictures -->
+                  <th><img class="search-icon" alt="picture of search icon" src="search_icon.png"></th>
+                  <th><img class="search-icon" alt="picture of search icon" src="search_icon.png"></th>
+                  <th><img class="search-icon" alt="picture of search icon" src="search_icon.png"></th>
+                </tr>
+                <tr id="hiw-TableDesp">
+                  <th>Lorem ipsum dolor sit amet, lorem nunc sed sollicitudin acss.</th>
+                  <th>Lorem ipsum dolor sit amet, lorem nunc sed sollicitudin acss.</th>
+                  <th>Lorem ipsum dolor sit amet, lorem nunc sed sollicitudin acss.</th>
+                </tr>
+              </table>
+            </div>
+            <!-- this whole section is commented out because at first i wanted to do 2 tables, one for buying 3d prints, and one for how to offer prints. <p class="howitworks-exp" id="howitworks-exp-earn">Lorem ipsum dolor sit amet, lorem nunc sed sollicitudin ac, metus arcu. Maecenas lorem pharetra. Eu platea vestibulum, nullam viverra metus donec in, amet vehicula auctor semper, elementum diam, pretium sit velit elit ornare amet.</p> -->
+          </section>
+        </article>
+      </div>
+      
+      <footer class="main-footer"> <!-- footer of site -->
+        <p class="site_map">Site Map</p>
+        <a class="mapLinks" id="map-search" href="./search.html">3DPrint</a>
+        <a class="mapLinks" id="submit" href="./submission.html">List Printer</a>
+      </footer>
+      
+    </div>
+  </body>
+</html>
