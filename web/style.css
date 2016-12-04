@@ -387,42 +387,6 @@ a:hover#menu-icon {
   } 
 }
 
-.main-footer { /* footer size and colour */
-	display: block;
-  height: 35px;
-  width: 100%;
-  padding: 10px 0px 10px 0px;
-  background: #2b2e39;
-}
-
-footer#stick-footer { /* some pages footer anchers to bottom */
-  position: fixed;
-  bottom: 0;
-}
-
-.site_map {
-  padding: 0px 0px 0px 30px;
-  color: #d3d3d3;
-}
-
-.mapLinks {
-  padding: 0px 0px 0px 40px;
-}
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-  .main-footer { /* make footer size bigger so its easier to see */
-    height: 100px;
-  }
-  
-  .site_map {
-    font-size: 250%;
-  }
-
-  .mapLinks {
-    font-size: 250%;
-  } 
-}
-
 body#access-page { /* change bg colour of registration page */
   background-color: #3e6177;
 }
@@ -654,7 +618,7 @@ input[type="checkbox"]{
 
 #result-article {
   padding: 100px 0px 0px 0px;
-  position: absolute;
+  margin: auto;
   width: 50%;
   left: 25%;
 }
@@ -665,20 +629,147 @@ input[type="checkbox"]{
   background-color: grey;
 }
 
+#map-div {
+  width: 90%;
+  margin: auto;
+  padding: 100px 0px 20px 0px;
+}
+
+#result-div {
+  min-height: 1000px;
+}
+
+#sidebar {
+  width: 15%;
+  margin-left: 5%;
+  margin-bottom:30px;
+  border-radius: 5px;
+  min-width: 185px;
+  background-color: #f6f6f6;
+  display: inline;
+  float: left;
+}
+
+#search-filter-title {
+  padding: 10px 0px 10px 8px;
+  font-size: 120%;
+  font-weight: 700;
+  
+}
+
+.widget {
+  padding: 5px 0px 15px 5px;
+  font-weight: 300;
+  
+}
+
+.side-input {
+  margin: 5px 5px 5px 5px;
+  padding: 2px 2px 2px 2px;
+  width: 300px;
+  
+  
+}
+
+.side-text {
+  font-weight: 300;
+}
+
+.side-price-input {
+  padding: 0px 0px 0px 8px;
+  width: 20%;
+}
+
+#price-search-text {
+  padding-left: 5px;
+  font-weight: 300;
+}
+
+#sidebar-submit {
+  font-size: 110%;
+  background-color: #cc2d2d;
+  color: white;
+  padding: 10px 10px 10px 10px;
+  margin-top: 20px;
+  margin-left: 10%;
+  margin-bottom: 15px;
+  border: 1px solid #cc2d2d;
+  border-radius: 5px;
+  width: 80%;
+}
+
+#result-main {
+  background-color: #f6f6f6;
+  margin-left: 1%;
+  width: 74%;
+  margin-bottom:30px;
+  border-radius: 5px;
+  
+  display: inline;
+  float: left;
+  
+}
+
+.result-table {
+  margin: 30px 0px 40px 0px;
+  width: 100%;
+  border-collapse: collapse;
+  
+}
+
+.printerPicture {
+  max-height: 150px;
+}
+
+.result-info {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+  padding: 10px 15px 10px 15px;
+}
+
+.result-userId {
+  font-size:90%;
+  font-weight: 300;
+}
+
+#result-price {
+  text-align: right;
+}
+
+.resilt-buy-title {
+  font-size: 110%;
+}
+
+.result-link-text {
+  font-size: 130%;
+}
+
+.result-descrip-text {
+  font-weight: 300;
+}
+
+
+
+
+
+
+
+
 #ind-map {
   width: 100%;
   height: 400px;
   background-color: grey;
 }
 
-.result-table { /* add border to table */
+.result-table-old { /* add border to table */
   margin: 30px 0px 40px 0px;
   width: 100%;
   border: 1px solid #adadad;
   border-radius: 5px;
 }
 
-.result-table th, td {
+.result-table-old th, td {
   padding: 20px 10px 20px 10px;
   border: 1px solid #adadad;
 }
@@ -687,7 +778,7 @@ input[type="checkbox"]{
   width: 50px;
 }
 
-.printerPicture { /* resize picture of printer */
+.printerPicture-old { /* resize picture of printer */
   width: 100%;
 }
 
@@ -710,13 +801,49 @@ input[type="checkbox"]{
     font-size: 250%;
   }
   
-  .result-table th, td {
+  .result-table-old th, td {
     font-size: 250%;
   }
   
   #bottom-table {
     margin-bottom: 200px;
   }
+}
+
+.main-footer { /* footer size and colour */
+	display: table;
+  height: 35px;
+  width: 100%;
+  padding: 10px 0px 10px 0px;
+  background: #2b2e39;
+}
+
+footer#stick-footer { /* some pages footer anchers to bottom */
+  position: fixed;
+  bottom: 0;
+}
+
+.site_map {
+  padding: 0px 0px 0px 30px;
+  color: #d3d3d3;
+}
+
+.mapLinks {
+  padding: 0px 0px 0px 40px;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .main-footer { /* make footer size bigger so its easier to see */
+    height: 100px;
+  }
+  
+  .site_map {
+    font-size: 250%;
+  }
+
+  .mapLinks {
+    font-size: 250%;
+  } 
 }
 
 

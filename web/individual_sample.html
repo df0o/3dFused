@@ -35,12 +35,7 @@
       
       <article id="result-article"> <!-- hard coded search results -->
         <section id="resultsmain">
-        
-          <div id="map"></div>
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIEqNwyeMt5ow6iRiI3t9Mk0RXBo-S-FQ&callback=initMap"
-          async defer>
-          </script>
-          
+
           <div class="table-view"> <!-- table of object details -->
           <br><br><h2 id="itemTitle">MakerBot Replicator Desktop 3D Printer</h2>
             <table class="result-table">
@@ -56,6 +51,11 @@
                 </td> 
               </tr>
             </table>
+            
+            <div id="map"></div>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIEqNwyeMt5ow6iRiI3t9Mk0RXBo-S-FQ&callback=initMap"
+            async defer>
+            </script>
 
             <table class="result-table" id="bottom-table">
               <tr>
@@ -74,7 +74,7 @@
         </section>
       </article>
       
-      <footer class="main-footer" id="stick-footer"> <!-- this footer anchors to bottom of page -->
+      <footer class="main-footer"> <!-- this footer anchors to bottom of page -->
         <p class="site_map">Site Map</p>
         <a class="mapLinks" id="map-search" href="./search.html">3DPrint</a>
         <a class="mapLinks" id="submit" href="./submission.html">List Printer</a>
