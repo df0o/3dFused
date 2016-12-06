@@ -17,16 +17,16 @@
       $(document).ready(function() {
         $(".tab").click(function() {
           var X=$(this).attr('id');
-          if(X=='signup') {
-            $("#login").removeClass('login');
-            $("#signup").addClass('login');
-            $("#loginbox").slideUp();
-            $("#signupbox").slideDown();
-          } else {
-            $("#signup").removeClass('login');
-            $("#login").addClass('login');
+          if(X=='login') {
+            $("#signup").removeClass('signup');
+            $("#login").addClass('signup');
             $("#signupbox").slideUp();
             $("#loginbox").slideDown();
+          } else {
+            $("#login").removeClass('signup');
+            $("#signup").addClass('signup');
+            $("#loginbox").slideUp();
+            $("#signupbox").slideDown();
           }
         });
       });
@@ -60,6 +60,7 @@
             <input class="form-input" type="text" name="name" placeholder="Name"> <br>
             <input class="form-input" type="text" name="username" placeholder="Userame"> <br>
             <input class="form-input" type="number" name="age" placeholder="age"> <br>
+            <input class="form-input" type="text" name="BirthDay" placeholder="Birthday (dd/mm/yy)"><br>
             <input class="form-input" id="email" type="email" name="email" placeholder="Email"> <br>
             <input class="form-input" type="password" name="passid" placeholder="Password"> <br>
             <input class="form-input" id="acc-termsCheck" type="checkbox" name="terms" value="terms"> <label for="acc-termsCheck" id="acc-termsCheckText">I agree with the Terms of Service</label> <br><br>

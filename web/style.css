@@ -449,11 +449,13 @@ a:hover#menu-icon {
   margin-left: 60px;
 }
 
-#signupbox {
+#loginbox {
   display: none;
 }
 
-
+#signupbox {
+  
+}
 
 
 body#access-page { /* change bg colour of registration page */
@@ -609,7 +611,7 @@ body#access-page { /* change bg colour of registration page */
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  padding: 50px 50px 50px 50px;
+  padding: 80px 50px 50px 50px;
   border: 1px solid white;
   background-color: white;
   color: black;
@@ -643,7 +645,7 @@ body#access-page { /* change bg colour of registration page */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   #subpage-article { /* move page to fit */
     margin: auto;
-    padding: 500px 20px 0px 20px;
+    padding: 350px 20px 0px 20px;
     margin-bottom: 150px;
   }
   
@@ -664,7 +666,7 @@ body#access-page { /* change bg colour of registration page */
 }
 
 #search-article {
-  padding: 200px 0px 100px 0px;
+  padding: 170px 0px 100px 0px;
   margin-left: 30%;
 }
 
@@ -696,6 +698,7 @@ input[type="checkbox"]{
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   #search-article { /* make margin smaller to fit more to device */
+    padding-top: 200px;
     margin-left: 10%;
   }
 
@@ -866,8 +869,42 @@ input[type="checkbox"]{
 }
 
 
-
-
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  #map {
+    margin-top: 120px;
+  }
+  
+  #sidebar {
+    display: none;
+  }
+  
+  #result-main {
+    width: 90%;
+    margin: 5%;
+  }
+  
+  .result-descrip-text {
+    display: none;
+  }
+  
+  .result-link-text {
+    font-size: 35px;
+  }
+  
+  .result-userId {
+    font-size: 25px;
+  }
+  
+  .resilt-buy-title {
+    font-size: 25px;
+  }
+  
+  .result-price-text {
+    font-size: 20px;
+    font-weight: 300;
+  }
+  
+}
 
 
 

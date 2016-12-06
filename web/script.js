@@ -20,6 +20,13 @@ function signupValidation() {
   if (!validateAge()) {
     missingFields = true;
   }
+  if (!validateBDay()) {
+    missingFields = true;
+  }
+  if (!checkTerms()) {
+    missingFields = true;
+  }
+
   if (missingFields) {
     div.style.display = "block";
     document.getElementById("errorMsg").innerHTML = ("Please correct the following error(s) before continuing:<br><br>" + strFields );
@@ -155,6 +162,52 @@ function validateAge() {
     return true;
 }
 
+function validateBDay() {
+    var checkVal = document.registration.BirthDay.value;
+
+    // Birth Day not empty
+    if (checkVal == "") {
+        strFields += "- Birth Date cannot be empty!<br>";
+        return false;
+    }
+
+    // Find text matching digit format "dd/mm/yyyy"
+    dateMatches = checkVal.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+
+    // Date entered using format
+    if (dateMatches == null) {
+        strFields += "- Invalid date format (dd/mm/yyyy)!<br>";
+    }
+
+    // Birth Day day must be 1-31 (inclusive)
+    if (dateMatches[1] < 1 || dateMatches[1] > 31) {
+        strFields += "- Day must between 1 and 31!<br>";
+        return false;
+    }
+
+    // Birth Day month must be 1-12 (inclusive)
+    if (dateMatches[2] < 1 || dateMatches[2] > 12) {
+        strFields += "- Month must be between 1 and 12!<br>";
+        return false;
+    }
+
+    // Birth Day year must be 1900-2016 (inclusive)
+    if (dateMatches[3] < 1900 || dateMatches[3] > 2016) {
+        strFields += "- Year must be between 1900 and 2016!<br>";
+        return false;
+    }
+
+    return true;
+}
+
+function checkTerms() { //need to select terms
+  var checkVal = document.registration.terms;
+	if (checkVal.checked == false) {
+		strFields += "- You must agree to the terms!";
+		return false;
+	}
+  return true;
+}
 
 function hideError() {
   var div = document.getElementById("errorbox");
@@ -178,3 +231,101 @@ function fillPosition(pos) {
     document.getElementById("sub-lat").value = pos.coords.latitude;
     document.getElementById("sub-lon").value = pos.coords.longitude;
 }
+
+function initMap() { // google map api
+  var locations = [ // multiple locations/markers
+      ['content', 43.2605738, -79.9304626, 4], //content can be changed to display different things
+      ['content', 43.2805738, -79.9504626, 5],
+      ['content', 43.2005738, -79.9004626, 3],
+      ['content', 43.3005738, -79.9204626, 2],
+      ['content', 43.2505738, -79.8804626, 1]
+    ];
+  
+  var mapOptions = { // map options 
+    zoom: 11,
+    center: new google.maps.LatLng(43.2605738, -79.9304626),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+  
+  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  
+  var infowindow = new google.maps.InfoWindow(); // info window for markers
+  var marker, i;
+  
+  var contentString = '<div id="content">'+ // content in info window
+    '<h1 id="firstHeading" class="firstHeading">MakerBot Replicator Desktop 3D Printer</h1>'+
+    '<p>The replicator desktop model provides a large build volume and fast print time to accelerate rapid prototyping and model making.</p>'+
+    '<p>MakerBot: , <a href="./individual_sample.html">'+
+    'Click here to go to posting</a> '+
+    '</div>';
+  
+  for (i = 0; i < locations.length; i++) { // display all markers
+    marker = new google.maps.Marker({
+      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+      map: map
+    });
+
+    google.maps.event.addListener(marker, 'click', (function(marker, i) { // show info window when click marker
+      return function() {
+        infowindow.setContent(contentString); //locations[i][0]
+        infowindow.open(map, marker);
+      }
+    })(marker, i));
+  }
+}
+
+
+
+
+
+var geocoder;
+
+//Get the latitude and the longitude;
+function successFunction(position) {
+  var lat = position.coords.latitude;
+  var lng = position.coords.longitude;
+  codeLatLng(lat, lng)
+}
+
+function errorFunction(){
+  alert("Geocoder failed");
+}
+
+function locateMe() {
+  geocoder = new google.maps.Geocoder();
+  
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+  } 
+}
+
+function codeLatLng(lat, lng) {
+  var latlng = new google.maps.LatLng(lat, lng);
+  geocoder.geocode({'latLng': latlng}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      console.log(results)
+      if (results[1]) {
+        for (var i = 0; i < results[0].address_components.length; i++) {
+          for (var b = 0;b < results[0].address_components[i].types.length; b++) {
+
+            if (results[0].address_components[i].types[b] == "locality") {
+              //this is the object you are looking for
+              city = results[0].address_components[i];
+              fillLoca(city.long_name);
+              break;
+            }
+          }
+        }
+      } else {
+        alert("No results found");
+      }
+    } else {
+      alert("Geocoder failed due to: " + status);
+    }
+  });
+}
+
+function fillLoca(city) {
+    document.getElementById("search-location").value = city;
+}
+
