@@ -9,6 +9,7 @@
     <meta name="robots" content="index,follow" />
     <link rel="icon" href="icon.ico" />
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js" ></script>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet"> <!-- google sans-serif font "Ubuntu" -->
     <title>3DFused - Turning Designs Into Objects</title>
   </head>
@@ -36,13 +37,15 @@
       <article id="subpage-article">
         <section id="submain"> <!-- submit your 3d printer and start selling prints -->
         <h2 id="sub-header">Upload a Printer to the Directory and Start Earning Every Print!</h2>
-          <form class="input-form" >
+          <form class="input-form" id="search-form">
             <input class="form-input" id="sub-title" type="text" name="sub-title" placeholder="Listing Title" required> <br>
             <input class="form-input" id="sub-printerType" type="text" name="sub-printerType" placeholder="3D Printer Type" required> <br>
             <textarea rows="7" cols="150" class="form-input" id="sub-descrip" placeholder="Please enter an description of your listing" required></textarea><br>
             <input class="form-input" id="website" type="url" pattern="https?://.+" name="website" placeholder="website" required> <br>
+            
             <input class="form-input" id="sub-lat" type="text" pattern="-?\d{1,3}\.\d+" name="sub-lat" placeholder="Latitude" required> 
             <input class="form-input" id="sub-lon" type="text" pattern="-?\d{1,3}\.\d+" name="sub-lon" placeholder="Longitude" required> <br>
+            <button class="form-input" id="getlocabutt" type="button" onclick="getLocation()">Get Location</button><br>
             
             <input class="form-input" type="file" name="picture" accept="image/*"> <br>
             <input class="form-input" id="sub-submit" type="submit" value="Submit">

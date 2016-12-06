@@ -22,7 +22,7 @@ function signupValidation() {
   }
   if (missingFields) {
     div.style.display = "block";
-    document.getElementById("errorMsg").innerHTML = ("I'm sorry, but you must correct the following error(s) before continuing:<br><br>" + strFields );
+    document.getElementById("errorMsg").innerHTML = ("Please correct the following error(s) before continuing:<br><br>" + strFields );
     strFields = "";
 		return false;
   }
@@ -159,4 +159,22 @@ function validateAge() {
 function hideError() {
   var div = document.getElementById("errorbox");
   div.style.display = "none";
+}
+
+// Get the location of the user
+function getLocation() {
+    // Check if location service is allowed
+    if (navigator.geolocation) {
+        // Get the location and call function to fill the inputs
+        navigator.geolocation.getCurrentPosition(fillPosition);
+    } else {
+        // Geolocation fail error
+        document.getElementById('search-form').insertAdjacentHTML('afterend', '<div><p>Geolocation failed</p></div>');
+    }
+}
+
+// Fill latitude and longitude with the passed geolocation information
+function fillPosition(pos) {
+    document.getElementById("sub-lat").value = pos.coords.latitude;
+    document.getElementById("sub-lon").value = pos.coords.longitude;
 }
