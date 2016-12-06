@@ -387,6 +387,81 @@ a:hover#menu-icon {
   } 
 }
 
+
+
+
+
+
+#container {
+  position: absolute;
+  top: 10%;
+  left: 35%;
+  width:24%;
+}
+
+#tabbox {
+  height:50px
+}
+
+#panel {
+  padding: 50px 50px 50px 50px;
+  border: 1px solid white;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  width: 100%;
+}
+
+#errorbox {
+  margin-left: 450px;
+  margin-top: -250px;
+  border-radius: 5px;
+  background-color: white;
+  width: 250px;
+  padding: 20px 10px 20px 20px;
+  display: none;
+}
+
+.tab {
+  display: inline;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  width: 80px;
+  font-weight: 700;
+  margin: 5px 0 5px 0;
+}
+
+.tab:link, .tab:visited {
+  color: white;
+}
+
+.tab:hover, .tab:active {
+  color: red;
+}
+
+#signup {
+  margin-left: 100px;
+  margin-right: 60px;
+
+}
+#login {
+  margin-left: 60px;
+}
+
+#loginbox {
+}
+
+
+#signupbox {
+  display: none;
+}
+
+
+
+
+
+
 body#access-page { /* change bg colour of registration page */
   background-color: #3e6177;
 }
@@ -411,6 +486,7 @@ body#access-page { /* change bg colour of registration page */
 }
 
 .form-input { /* make form input boxes pretty */
+  font-size: 105%;
   margin: 5px 5px 5px 5px;
   border-radius: 5px;
   padding: 2px 2px 2px 2px;
@@ -448,10 +524,25 @@ body#access-page { /* change bg colour of registration page */
   color: white;
 }
 
+#acc-login { /* make submit button pretty */
+  font-size: 125%;
+  background-color: #cc2d2d;
+  color: white;
+  padding: 15px 30px 15px 30px;
+  border: 1px solid #cc2d2d;
+  border-radius: 5px;
+}
+
+#acc-login:hover {
+  background-color: #da3e3e;
+  color: white;
+}
+
+
 #close-button { /* put close button at corner of modal to go back to home page */
   height: 27px;
   float: right;
-  transform: translate(160%, -160%);
+  transform: translate(360%, 20%);
 }
 
 #errorMsg {
@@ -501,6 +592,17 @@ body#access-page { /* change bg colour of registration page */
     transform: translate(120%, -120%);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 #subpage-article { /* center submission page content */
   position: absolute;

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="4ww3 project blah blah" />
+    <meta name="keywords" content="will,fill,later" />
+    <meta name="author" content="Susie Yu" />
+    <meta name="robots" content="index,follow" />
+    <link rel="icon" href="icon.ico" />
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js" ></script>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet"> <!-- google sans-serif font "Ubuntu" -->
+    <title>3DFused - Turning Designs Into Objects</title>
+  </head>
+  
+  <body id="access-page">
+    <div id="access-wrapper"> <!-- wrapper for body -->
+      <a id="close-link" href="./index.html">
+        <img id="close-button" alt="image of close button" src="close_button.png"> <!-- close button to go back to index page. tried to make this look like a modal, so no header or footer -->
+      </a>
+      <p id="acc-signupText">Sign up for 3DFused</p>
+      <p id="errorMsg"></p>
+      <form name='registration' onSubmit="return formValidation();"> <!-- sign up forms -->
+        <input class="form-input" id="acc-name" type="text" name="first_name" placeholder="First Name">
+        <input class="form-input" id="acc-lastname" type="text" name="last_name" placeholder="Last Name"> <br>
+        <input class="form-input" type="text" name="username" placeholder="Userame"> <br>
+        <input class="form-input" type="number" name="idnumber" placeholder="id number eg 123"> <br>
+        <input class="form-input" id="email" type="email" name="email" placeholder="Email"> <br>
+        <input class="form-input" type="password" name="passid" placeholder="Password"> <br>
+        <input class="form-input" id="acc-termsCheck" type="checkbox" name="terms" value="terms"> <label for="acc-termsCheck" id="acc-termsCheckText">I agree with the Terms of Service</label> <br>
+        <input class="form-input" id="acc-submit" type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>
