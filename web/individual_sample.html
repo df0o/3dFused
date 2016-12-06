@@ -70,6 +70,30 @@
                 <td class="sample-description-text">this is another review. woot!</td>
               </tr>
             </table>
+            
+            <!-- open modal -->
+            <button class="form-input" id="openReviewMod" type="button" onclick="openModal();">Write an Review</button><br>
+            
+            
+            <!-- the modal -->
+            <div id="myModal" class="modal">
+
+              <!-- modal content -->
+              <div class="modal-content">
+                
+                <img id="closeMod" alt="image of close button" onclick="closeModal();" src="close_button.png">
+                
+                <div class="starRating">
+                  <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                </div>
+                
+                <form id="review-form" name='userReview'>
+                  <textarea class="form-input" id="formtext" name="message" placeholder="Write an review"></textarea>
+                  
+                  <button class="form-input" id="submitReview" type="button" onclick="closeModal();">Submit Review</button>
+                </form>
+              </div>
+            </div>
           </div>
         </section>
       </article>

@@ -148,7 +148,7 @@ function validateAge() {
     }
 
     // Age is 10-120
-    if (checkVal.length < 10 || checkVal.length > 120) {
+    if (checkVal < 10 || checkVal > 120) {
         strFields += "- Invalid age!<br>";
         return false;
     }
@@ -276,8 +276,6 @@ function initMap() { // google map api
 
 
 
-
-
 var geocoder;
 
 //Get the latitude and the longitude;
@@ -328,4 +326,18 @@ function codeLatLng(lat, lng) {
 function fillLoca(city) {
     document.getElementById("search-location").value = city;
 }
+
+
+function openModal() {
+  var modal = document.getElementById('myModal');
+  modal.style.display = "block";
+}
+
+function closeModal() {
+  var modal = document.getElementById('myModal');
+  var span = document.getElementsByClassName("close")[0];
+  modal.style.display = "none";
+}
+
+
 
