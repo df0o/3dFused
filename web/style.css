@@ -55,6 +55,18 @@ a:hover#menu-icon {
   
 }
 
+#hiUser {
+  float: right;
+  padding: 5px 35px 5px 25px;
+  font-weight: 400;
+}
+
+#logout-nav {
+  float: right;
+  padding: 5px 10px 5px 25px;
+  font-weight: 400;
+}
+
 #login-nav {
   float: right;
   padding: 5px 10px 5px 25px;
@@ -259,7 +271,7 @@ a:hover#menu-icon {
   position: relative;
 }
 
-#joinnetwork-text { /* add border around text */
+.joinnetwork-text { /* add border around text */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -273,8 +285,16 @@ a:hover#menu-icon {
   font-weight: 300;
 }
 
-#joinnetwork-text:hover { /* change bg colour when hover */
+.joinnetwork-text:hover { /* change bg colour when hover */
   background-color: #da3e3e;
+}
+
+#listPrinter {
+  color: white;
+}
+
+#joinPrinter {
+  color: white;
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
@@ -283,7 +303,7 @@ a:hover#menu-icon {
     width: 100%;
   }
   
-  #joinnetwork-text { /* make text bigger */
+  .joinnetwork-text { /* make text bigger */
     font-size: 250%;
     padding: 10px 20px 10px 20px;
   }
@@ -833,7 +853,7 @@ input[type="checkbox"]{
 }
 
 .printerPicture {
-  max-height: 150px;
+  max-width: 350px;
 }
 
 .result-info {
@@ -989,14 +1009,9 @@ input[type="checkbox"]{
   position: relative;
   width: 1.1em;
 }
-.starRating > span:hover, .starRating > span:hover ~ span {
-  color: transparent;
-}
-.starRating > span:hover:before, .starRating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
-   left: 0; 
-   color: gold;
+
+.rating {
+  max-height: 50px;
 }
 
 #formtext {
@@ -1069,6 +1084,44 @@ input[type="checkbox"]{
   .result-table-old th, td {
     font-size: 250%;
   }
+}
+
+#regThanksBody {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+#regTHead {
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.regTReturn {
+  padding: 15px 25px 15px 25px;
+  margin: 20px;
+  border: 2px solid #868686;
+  border-radius: 5px;
+  font-weight: 400;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  
+  #regTHead {
+    font-size: 250%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .regTReturn {
+    display: block;
+    font-size: 150%;
+  }
+  
 }
 
 .main-footer { /* footer size and colour */

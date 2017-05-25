@@ -1,6 +1,5 @@
 var strFields = "";
 
-
 function signupValidation() {
   var missingFields = false;
   var div = document.getElementById("errorbox");
@@ -36,6 +35,7 @@ function signupValidation() {
   return true;
 }
 
+/*
 function loginValidation() {
   var missingFields = false;
   var div = document.getElementById("errorbox");
@@ -54,6 +54,7 @@ function loginValidation() {
   }
   return true;
 }
+*/
 
 function validateUsername() {
     // Get value entered into Username text field
@@ -172,15 +173,15 @@ function validateBDay() {
     }
 
     // Find text matching digit format "dd/mm/yyyy"
-    dateMatches = checkVal.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    dateMatches = checkVal.match(/^(\d{4})\/(\d{1,2})\/(\d{1,2})$/);
 
     // Date entered using format
     if (dateMatches == null) {
-        strFields += "- Invalid date format (dd/mm/yyyy)!<br>";
+        strFields += "- Invalid date format (yyyy/mm/dd)!<br>";
     }
 
     // Birth Day day must be 1-31 (inclusive)
-    if (dateMatches[1] < 1 || dateMatches[1] > 31) {
+    if (dateMatches[3] < 1 || dateMatches[3] > 31) {
         strFields += "- Day must between 1 and 31!<br>";
         return false;
     }
@@ -192,7 +193,7 @@ function validateBDay() {
     }
 
     // Birth Day year must be 1900-2016 (inclusive)
-    if (dateMatches[3] < 1900 || dateMatches[3] > 2016) {
+    if (dateMatches[1] < 1900 || dateMatches[1] > 2016) {
         strFields += "- Year must be between 1900 and 2016!<br>";
         return false;
     }
@@ -289,31 +290,30 @@ function errorFunction(){
   alert("Geocoder failed");
 }
 
-function locateMe() {
+function locateMeClick() {
   geocoder = new google.maps.Geocoder();
-  
+  var options = {
+    ttimeout: 10000, maximumAge: 600000
+  };
+
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+    navigator.geolocation.getCurrentPosition(successFunction, errorFunction, options);
   } 
 }
 
 function codeLatLng(lat, lng) {
-  var latlng = new google.maps.LatLng(lat, lng);
-  geocoder.geocode({'latLng': latlng}, function(results, status) {
+  var latlngs = new google.maps.LatLng(lat, lng);
+  geocoder.geocode({'latLng': latlngs}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       console.log(results)
       if (results[1]) {
-        for (var i = 0; i < results[0].address_components.length; i++) {
-          for (var b = 0;b < results[0].address_components[i].types.length; b++) {
-
-            if (results[0].address_components[i].types[b] == "locality") {
-              //this is the object you are looking for
+        for (var i = 0; i < results[1].address_components.length; i++) {
+            if (results[1].address_components[i].types[0] == "locality") {
               city = results[0].address_components[i];
-              fillLoca(city.long_name);
               break;
             }
-          }
-        }
+        } 
+        fillLoca(city.long_name);
       } else {
         alert("No results found");
       }
@@ -339,5 +339,18 @@ function closeModal() {
   modal.style.display = "none";
 }
 
+function change(id) {
+    var cname = document.getElementById(id).className;
+    var ab = document.getElementById(id + "_hidden").value;
+    document.getElementById("starrating").innerHTML = ab;
+
+    for(var i = ab; i >= 1; i--) {
+       document.getElementById(cname + i).src = "star2.png";
+    }
+    var id = parseInt(ab) + 1;
+    for(var j = id; j <= 5; j++) {
+       document.getElementById(cname + j).src = "star1.png";
+    }
+ }
 
 

@@ -10,7 +10,8 @@
     <link rel="icon" href="icon.ico" />
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOvImrAkQGn0o68ZD6voiz6l5Kon4QRV4"
+  type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet"> <!-- google sans-serif font "Ubuntu" -->
     <title>3DFused - Turning Designs Into Objects</title>
   </head>
@@ -40,7 +41,8 @@
           <h2 id="search-title">Search for 3D Printers Near You!</h2><br>
           <form> <!-- this doesnt submit to anything yet -->
             <input class="form-input" id="search-location" type="search" name="search-location" placeholder="Enter Location"> <br> <!-- search by location to find printers near you -->
-            <button class="form-input" id="getlocabutt" type="button" onclick="locateMe();">Locate Me</button><br>
+            
+            <button class="form-input" id="getlocabutt" type="button" onclick="locateMeClick();">Locate Me</button><br>
             <select class="form-input" id="search-rating">
               <option selected disabled>Select User Rating</option> <!-- sort by xx raiting or higher -->
               <option value="fiveS">5 Stars</option>

@@ -48,23 +48,23 @@
       <div id="panel">
         <div id="loginbox">
           <p class="acc-signupText">Login to 3DFused</p>
-          <form name='login' onSubmit="return loginValidation();">
-            <input class="form-input" type="text" name="username" placeholder="Userame"> <br>
+          <form name='login' onSubmit="return loginValidation();" action="login-process.php" method="POST">
+            <input class="form-input" type="text" name="username" placeholder="Username"> <br>
             <input class="form-input" type="password" name="passid" placeholder="Password"> <br><br>
-            <input class="form-input" id="acc-login" type="submit" value="Login">
+            <input class="form-input" id="acc-login" type="submit" value="Login" name="submit">
           </form>
         </div>
         <div id="signupbox">
           <p class="acc-signupText">Sign Up for 3DFused</p>
-          <form id="register-form" name='registration' onSubmit="return signupValidation();"> <!-- sign up forms -->
+          <form id="register-form" name='registration' onSubmit="return signupValidation();" action="signup-process.php" method="POST"> <!-- sign up forms -->
             <input class="form-input" type="text" name="name" placeholder="Name"> <br>
             <input class="form-input" type="text" name="username" placeholder="Userame"> <br>
             <input class="form-input" type="number" name="age" placeholder="age"> <br>
-            <input class="form-input" type="text" name="BirthDay" placeholder="Birthday (dd/mm/yy)"><br>
+            <input class="form-input" type="text" name="BirthDay" placeholder="Birthday (yyyy/mm/dd)"><br>
             <input class="form-input" id="email" type="email" name="email" placeholder="Email"> <br>
             <input class="form-input" type="password" name="passid" placeholder="Password"> <br>
             <input class="form-input" id="acc-termsCheck" type="checkbox" name="terms" value="terms"> <label for="acc-termsCheck" id="acc-termsCheckText">I agree with the Terms of Service</label> <br><br>
-            <input class="form-input" id="acc-submit" type="submit" value="Sign Up">
+            <input class="form-input" id="acc-submit" type="submit" value="Sign Up" name="submit">
           </form>
         </div>
       </div>
